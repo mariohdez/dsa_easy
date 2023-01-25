@@ -1,11 +1,13 @@
 package dsa_easy;
 
-import math.RomanToInt;
+import array.ThreeSumSolution;
 
 public class Program {
 	public static void main(String[] args) {
-		RomanToInt test = new RomanToInt();
-		int value = test.romanToInt("MCMXCIV");
-		System.out.println(value);
+		int[] nums = new int[] {0,0,0};
+		
+		ThreeSumSolution test = new ThreeSumSolution();
+
+		test.threeSum(nums);
 	}
 }
