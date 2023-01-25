@@ -38,6 +38,26 @@ public class RomanToInt {
 
 		return value;
 	}
+	
+	public int romanToIntBackwards(String s) {
+		int lastIndex = s.length() - 1;
+		int lastValue = this.symbolToValueMap.get(s.substring(lastIndex, lastIndex + 1));
+		int value = lastValue;
+
+		for (int currentIndex = s.length() - 2; currentIndex >= 0; --currentIndex) {
+			int currentValue = this.symbolToValueMap.get(s.substring(currentIndex, currentIndex + 1));
+			if (currentValue < lastValue) {
+				value -= currentValue;
+			} else {
+				value += currentValue;
+			}
+
+			lastValue = currentValue;
+		}
+
+
+		return value;
+	}
 
 	public boolean isTwoLetteredSymbol(String s, int index, int maxLength) {
 		if (!(index + 1 < maxLength)) {
