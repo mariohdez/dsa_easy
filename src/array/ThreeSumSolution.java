@@ -3,40 +3,40 @@ package array;
 import java.util.Arrays;
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Map;
-import java.util.HashMap;
 
 public class ThreeSumSolution {
 	private List<List<Integer>> answers = new ArrayList<List<Integer>>();
 
 	public List<List<Integer>> threeSum(int[] nums) {
-
 		Arrays.sort(nums);
 
 		for (int i = 0; i < nums.length && nums[i] <= 0; ++i) {
-			if (i == 0 || nums[i - 1] != nums[i]) {
+			if (i == 0 || nums[i] != nums[i - 1]) {
 				twoSum(nums, i);
 			}
 		}
 
-		return answers;
+		return this.answers;
 	}
 
 	public void twoSum(int[] nums, int i) {
-		int target = -1 * nums[i];
-		Map<Integer, Integer> valueToIndexMap = new HashMap<Integer, Integer>();
+		int low = i + 1;
+		int high = nums.length - 1;
 
-		for (int j = i + 1; j < nums.length; ++j) {
-			int remainingValue = target - nums[j];
+		while (low < high) {
+			int sum = nums[i] + nums[low] + nums[high];
 
-			if (valueToIndexMap.containsKey(remainingValue)) {
-				this.answers.add(Arrays.asList(nums[i], nums[j], remainingValue));
-
-				while (j + 1 < nums.length && nums[j] == nums[j + 1]) {
-					j++;
-				}
+			if (sum < 0) {
+				low++;
+			} else if (sum > 0) {
+				high--;
 			} else {
-				valueToIndexMap.put(nums[j], j);
+				this.answers.add(Arrays.asList(nums[i], nums[low], nums[high]));
+				low++;
+				high--;
+				while (low < high && nums[low - 1] == nums[low]) {
+					low++;
+				}
 			}
 		}
 	}
