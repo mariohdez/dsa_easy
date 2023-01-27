@@ -1,13 +1,14 @@
 package dsa_easy;
 
-import array.ThreeSumSolution;
+import array.LengthOfLongestSubstringSolution;
 
 public class Program {
 	public static void main(String[] args) {
-		int[] nums = new int[] {0,0,0};
+		String s = "pwwkew";
+		LengthOfLongestSubstringSolution test = new LengthOfLongestSubstringSolution();
 		
-		ThreeSumSolution test = new ThreeSumSolution();
-
-		test.threeSum(nums);
+		int value = test.lengthOfLongestSubstring(s);
+		
+		System.out.println(value);
 	}
 }
