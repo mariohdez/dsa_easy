@@ -1,13 +1,13 @@
 package dsa_easy;
 
-import array.LengthOfLongestSubstringSolution;
+import array.LongestPalindromeSolution;
 
 public class Program {
 	public static void main(String[] args) {
-		String s = "pwwkew";
-		LengthOfLongestSubstringSolution test = new LengthOfLongestSubstringSolution();
+		String s = "aaaaa";
+		LongestPalindromeSolution test = new LongestPalindromeSolution();
 		
-		int value = test.lengthOfLongestSubstring(s);
+		String value = test.longestPalindrome(s);
 		
 		System.out.println(value);
 	}
