@@ -1,13 +1,14 @@
 package dsa_easy;
 
-import array.LongestPalindromeSolution;
+import array.MissingRangesSolution;
 
 public class Program {
 	public static void main(String[] args) {
-		String s = "aaaaa";
-		LongestPalindromeSolution test = new LongestPalindromeSolution();
+		int[] nums = new int[] {0,1,3,50,75};
 		
-		String value = test.longestPalindrome(s);
+		MissingRangesSolution test = new MissingRangesSolution();
+		
+		var value = test.findMissingRanges(nums, 0, 99);
 		
 		System.out.println(value);
 	}
