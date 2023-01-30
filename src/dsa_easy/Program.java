@@ -1,15 +1,13 @@
 package dsa_easy;
 
-import array.CountAndSaySolution;
+import array.ProductExceptSelfSolution;
 
 public class Program {
 	public static void main(String[] args) {
-		String n = "1211";
+		int[] nums = new int[] {1,2,3,4};
 
-		CountAndSaySolution test = new CountAndSaySolution();
+		ProductExceptSelfSolution test = new ProductExceptSelfSolution();
 		
-		var value = test.say(n);
-
-		System.out.println(value + "vs " + "111221");
+		var value = test.productExceptSelf(nums);
 	}
 }
