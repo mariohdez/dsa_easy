@@ -3,24 +3,17 @@ package array;
 public class ProductExceptSelfSolution {
 	public int[] productExceptSelf(int[] nums) {
 		int[] answer = new int[nums.length];
-		int[] left = new int[nums.length];
-		int[] right = new int[nums.length];
 
-
-		left[0] = 1;
+		answer[0] = 1;
 
 		for (int i = 1; i < nums.length; ++i) {
-			left[i] = left[i - 1]* nums[i - 1];
+			answer[i] = answer[i - 1]* nums[i - 1];
 		}
 
-		right[nums.length - 1] = 1;
-
-		for (int i = nums.length - 2; i >= 0; --i) {
-			right[i] = right[i + 1] * nums[i + 1];
-		}
-		
-		for (int i = 0; i < nums.length; ++i) {
-			answer[i] = left[i] * right[i];
+		int R = 1;
+		for (int i = nums.length - 1; i >= 0; --i) {
+			answer[i] = answer[i] * R;
+			R = R * nums[i];
 		}
 
 		return answer;
