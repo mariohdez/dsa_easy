@@ -4,11 +4,6 @@ import array.GameOfLife;
 
 public class Program {
 	public static void main(String[] args) {
-		/**
-		 * 
-[],[],[],[]
-		 * 
-		 */
 		int[][] matrix = new int[][] {
 			new int[] {0,1,0},
 			new int[] {0,0,1},

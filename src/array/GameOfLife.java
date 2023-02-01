@@ -1,28 +1,18 @@
 package array;
 
 public class GameOfLife {
-/*
-Any live cell with fewer than two live neighbors dies as if caused by under-population.
-Any live cell with two or three live neighbors lives on to the next generation.
-Any live cell with more than three live neighbors dies, as if by over-population.
-Any dead cell with exactly three live neighbors becomes a live cell, as if by reproduction.
- */
 	public void gameOfLife(int[][] board) {
-		int[][] tempBoard = new int[board.length][board[0].length];
-
 		for (int r = 0; r < board.length; ++r) {
 			for (int c = 0; c < board[0].length; ++c) {
 				int liveNeighbors = getNumberOfLiveNeighbors(board, r, c);
 
 				if (board[r][c] == 1) {
 					if (liveNeighbors < 2 || liveNeighbors > 3) {
-						tempBoard[r][c] = 0;
-					} else {
-						tempBoard[r][c] = 1;
+						board[r][c] = -1;
 					}
 				} else {
 					if (liveNeighbors == 3) {
-						tempBoard[r][c] = 1;
+						board[r][c] = 2;
 					}
 				}
 			}
@@ -30,7 +20,11 @@ Any dead cell with exactly three live neighbors becomes a live cell, as if by re
 
 		for (int r = 0; r < board.length; ++r) {
 			for (int c = 0; c < board[0].length; ++c) {
-				board[r][c] = tempBoard[r][c];
+				if (board[r][c] > 0) {
+					board[r][c] = 1;
+				} else {
+					board[r][c] = 0;
+				}
 			}
 		}
 	}
@@ -49,7 +43,7 @@ Any dead cell with exactly three live neighbors becomes a live cell, as if by re
 				continue;
 			}
 
-			if (board[newRow][newCol] == 1) {
+			if (Math.abs(board[newRow][newCol]) == 1) {
 				numberOfLiveNeighbors++;
 			}
 			
