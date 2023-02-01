@@ -1,26 +1,14 @@
 package dsa_easy;
 
-import array.GameOfLife;
+import array.FirstMissingPositiveSolution;
 
 public class Program {
 	public static void main(String[] args) {
-		int[][] matrix = new int[][] {
-			new int[] {0,1,0},
-			new int[] {0,0,1},
-			new int[] {1,1,1},
-			new int[] {0,0,0},
-		};
+		int[] nums = new int[] {1, 2, 0};
 
-		var test = new GameOfLife();
+		var test = new FirstMissingPositiveSolution();
 
-		test.gameOfLife(matrix);
-		
-		for (int i = 0; i < matrix.length; ++i) {
-			for (int j = 0; j < matrix[0].length; ++j) {
-				System.out.print(matrix[i][j] + " ");
-			}
-
-			System.out.println();
-		}
+		var hi = test.firstMissingPositive(nums);
+		System.out.println("hi: " + hi);
 	}
 }
