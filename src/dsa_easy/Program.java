@@ -1,14 +1,14 @@
 package dsa_easy;
 
-import array.FirstMissingPositiveSolution;
+import array.LengthOfLongestSubstringKDistinctSolution;
 
 public class Program {
 	public static void main(String[] args) {
-		int[] nums = new int[] {1, 2, 0};
+		var test = new LengthOfLongestSubstringKDistinctSolution();
 
-		var test = new FirstMissingPositiveSolution();
-
-		var hi = test.firstMissingPositive(nums);
-		System.out.println("hi: " + hi);
+		var hi = test.lengthOfLongestSubstringKDistinct("aa", 1);
+		
+		System.out.println("Max Len: " + hi);
+		return;
 	}
 }
