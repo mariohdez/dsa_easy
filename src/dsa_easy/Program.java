@@ -1,12 +1,19 @@
 package dsa_easy;
 
-import array.LengthOfLongestSubstringKDistinctSolution;
+import array.MinimumWindowSubstringSolution;
 
 public class Program {
 	public static void main(String[] args) {
-		var test = new LengthOfLongestSubstringKDistinctSolution();
+		/*
+		 * "bdab"
+"ab"
+		 * */
+		var s = "ADOBECODEBANC";
+		var t = "ABC";
 
-		var hi = test.lengthOfLongestSubstringKDistinct("aa", 1);
+		var test = new MinimumWindowSubstringSolution();
+
+		var hi = test.minWindow(s,t);
 		
 		System.out.println("Max Len: " + hi);
 		return;
