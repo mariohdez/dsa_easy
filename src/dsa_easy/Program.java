@@ -11,7 +11,7 @@ public class Program {
 		 * 
 		 * */
 		String v1 = "1.01";
-		String v2 = "1.001";
+		String v2 = "1";
 
 		var test = new CompareVersionsSolution();
 

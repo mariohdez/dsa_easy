@@ -5,36 +5,42 @@ import java.util.ArrayList;
 
 public class CompareVersionsSolution {
     public int compareVersion(String version1, String version2) {
-		String[] version1RevisionStrs = version1.split("\\.");
-		String[] version2RevisionStrs = version2.split("\\.");
-		List<Integer> version1Revisions = new ArrayList<Integer>();
-		List<Integer> version2Revisions = new ArrayList<Integer>();
-		int normalizedLength = Math.max(version1RevisionStrs.length, version2RevisionStrs.length);
+    	int ptr1 = 0;
+    	int ptr2 = 0;
+    	int revision1 = 0;
+    	int revision2 = 0;
+    	
+    	while (ptr1 < version1.length() || ptr2 < version2.length()) {
+    		int ptr1Start = ptr1;
+    		int ptr2Start = ptr2;
 
-		for (int i = 0; i < normalizedLength; ++i) {
-			if (i >= version1RevisionStrs.length) {
-				version1Revisions.add(0);
-			} else {
-				version1Revisions.add(revisionStrToRevisionInt(version1RevisionStrs[i]));
-			}
+    		while (ptr1 < version1.length() && version1.charAt(ptr1) != '.') {
+    			++ptr1;
+    		}
 
-			if (i >= version2RevisionStrs.length) {
-				version2Revisions.add(0);
-			} else {
-				version2Revisions.add(revisionStrToRevisionInt(version2RevisionStrs[i]));
-			}
-		}
-		
-		for (int i = 0; i < normalizedLength; ++i) {
-			int res = version1Revisions.get(i) - version2Revisions.get(i);
-			if (res == 0) {
-				continue;
-			} else if (res < 0) {
-				return -1;
-			} else {
-				return 1;
-			}
-		}
+    		while (ptr2 < version2.length() && version2.charAt(ptr2) != '.') {
+    			++ptr2;
+    		}
+    		
+    		if (ptr1Start != ptr1) {
+    			revision1 = revisionStrToRevisionInt(version1.substring(ptr1Start, ptr1));
+    		}
+    		
+    		if (ptr2Start != ptr2) {
+    			revision2 = revisionStrToRevisionInt(version2.substring(ptr2Start, ptr2));
+    		}
+
+    		int diff = revision1 - revision2;
+    		
+    		if (diff!=0) {
+    			return diff;
+    		}
+
+    		++ptr1;
+    		++ptr2;
+    		revision1=0;
+    		revision2=0;
+    	}
 
 		return 0;
 	}
