@@ -1,8 +1,5 @@
 package array;
 
-import java.util.List;
-import java.util.ArrayList;
-
 public class CompareVersionsSolution {
     public int compareVersion(String version1, String version2) {
     	int ptr1 = 0;
