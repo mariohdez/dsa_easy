@@ -1,21 +1,16 @@
 package dsa_easy;
 
-import array.MinimumWindowSubstringSolution;
+import array.IntegerToRomanSolution;
 
 public class Program {
 	public static void main(String[] args) {
-		/*
-		 * "bdab"
-"ab"
-		 * */
-		var s = "ADOBECODEBANC";
-		var t = "ABC";
+		int num = 2994;
 
-		var test = new MinimumWindowSubstringSolution();
+		var test = new IntegerToRomanSolution();
 
-		var hi = test.minWindow(s,t);
+		var hi = test.intToRoman(num);
 		
-		System.out.println("Max Len: " + hi);
-		return;
+		System.out.println("roman: " + hi);
+		return; // LVIII
 	}
 }
