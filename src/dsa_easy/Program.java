@@ -1,14 +1,21 @@
 package dsa_easy;
 
-import array.IntegerToRomanSolution;
+import array.CompareVersionsSolution;
 
 public class Program {
 	public static void main(String[] args) {
-		int num = 2994;
+		/*
+		 * 
+"1.01"
+"1.001"
+		 * 
+		 * */
+		String v1 = "1.01";
+		String v2 = "1.001";
 
-		var test = new IntegerToRomanSolution();
+		var test = new CompareVersionsSolution();
 
-		var hi = test.intToRoman(num);
+		var hi = test.compareVersion(v1,v2);
 		
 		System.out.println("roman: " + hi);
 		return; // LVIII
