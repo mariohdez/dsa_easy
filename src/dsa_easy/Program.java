@@ -1,23 +1,26 @@
 package dsa_easy;
 
-import array.CompareVersionsSolution;
+import array.MatrixMultiplicationSolution;
 
 public class Program {
-	public static void main(String[] args) {
-		/*
-		 * 
-"1.01"
-"1.001"
-		 * 
-		 * */
-		String v1 = "1.01";
-		String v2 = "1";
+	public static void main(String[] args) {		
+		int[][] mat1 = new int[][] { new int[] {1, 0, 0}, new int[] {-1,0,3} };
+		int[][] mat2 = new int[][] { new int[] {7, 0, 0}, new int[] {0, 0, 0}, new int[] {0, 0, 1} };
 
-		var test = new CompareVersionsSolution();
+		var test = new MatrixMultiplicationSolution();
 
-		var hi = test.compareVersion(v1,v2);
-		
-		System.out.println("roman: " + hi);
-		return; // LVIII
+		var hi = test.multiply(mat1, mat2);
+
+		for (int i = 0; i < hi.length; ++i) {
+			for (int j = 0; j < hi[0].length; ++j) {
+				System.out.print(hi[i][j]);
+				if (j + 1 != hi[0].length) {
+					 System.out.print(", ");
+				}
+			}
+			System.out.println();
+		}
+
+		return;
 	}
 }
