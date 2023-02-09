@@ -1,24 +1,17 @@
 package dsa_easy;
 
-import array.MatrixMultiplicationSolution;
+import array.PositionOfLargeGroupsSolution;
 
 public class Program {
 	public static void main(String[] args) {		
-		int[][] mat1 = new int[][] { new int[] {1, 0, 0}, new int[] {-1,0,3} };
-		int[][] mat2 = new int[][] { new int[] {7, 0, 0}, new int[] {0, 0, 0}, new int[] {0, 0, 1} };
+		String s = "xyzzz";
 
-		var test = new MatrixMultiplicationSolution();
+		var test = new PositionOfLargeGroupsSolution();
 
-		var hi = test.multiply(mat1, mat2);
-
-		for (int i = 0; i < hi.length; ++i) {
-			for (int j = 0; j < hi[0].length; ++j) {
-				System.out.print(hi[i][j]);
-				if (j + 1 != hi[0].length) {
-					 System.out.print(", ");
-				}
-			}
-			System.out.println();
+		var hi = test.largeGroupPositions(s);
+		
+		for (int i = 0; i < hi.size(); ++i) {
+			System.out.println("l: " + hi.get(i).get(0) + " , r: " + hi.get(i).get(1));
 		}
 
 		return;
