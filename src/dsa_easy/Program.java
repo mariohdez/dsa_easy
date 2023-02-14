@@ -1,19 +1,14 @@
 package dsa_easy;
 
-import array.PositionOfLargeGroupsSolution;
+import array.StringCompressionSolution;
 
 public class Program {
-	public static void main(String[] args) {		
-		String s = "xyzzz";
+	public static void main(String[] args) {
+		StringCompressionSolution scs = new StringCompressionSolution();
+		char[] chars = new char[] {'a', 'a', 'a', 'b'};
+		int newLen = scs.compress(chars);
 
-		var test = new PositionOfLargeGroupsSolution();
-
-		var hi = test.largeGroupPositions(s);
-		
-		for (int i = 0; i < hi.size(); ++i) {
-			System.out.println("l: " + hi.get(i).get(0) + " , r: " + hi.get(i).get(1));
-		}
-
+		System.out.println("new len: " + newLen);
 		return;
 	}
 }
