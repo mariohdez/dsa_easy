@@ -1,7 +1,5 @@
 package array;
 
-import java.util.Stack;
-
 public class CandyCrushSolution {
 
 	public int[][] candyCrush(int[][] board) {
