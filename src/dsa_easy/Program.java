@@ -1,21 +1,15 @@
 package dsa_easy;
 
-import array.IsomorphicStringsSolution;
+import array.MinimumIndexSumOfTwoStrings;
 
 public class Program {
 	public static void main(String[] args) {
-		IsomorphicStringsSolution iss = new IsomorphicStringsSolution();
+		MinimumIndexSumOfTwoStrings mists = new MinimumIndexSumOfTwoStrings();
 
-		/*
-		 * 
-		 * 
-"badc"
-"baba"
-		 * 
-		 * */
-		boolean res = iss.isIsomorphic("badc", "baba");
+		String[] list1 = new String[] {"happy","sad","good"};
+		String[] list2 = new String[] {"sad","happy","good"};
+		String[] res = mists.findRestaurant(list1, list2);
 
-		System.out.println("isIsomorphic: " + res);
 
 		return;
 	}
