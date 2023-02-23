@@ -1,15 +1,15 @@
 package dsa_easy;
 
-import array.MinimumIndexSumOfTwoStrings;
+import array.CanPlaceFlowersSolution;
 
 public class Program {
 	public static void main(String[] args) {
-		MinimumIndexSumOfTwoStrings mists = new MinimumIndexSumOfTwoStrings();
+		CanPlaceFlowersSolution cpfs = new CanPlaceFlowersSolution();
+		int n = 2;
+		int[] list1 = new int[] {1, 0, 0, 0, 1, 0, 0};
+		boolean res = cpfs.canPlaceFlowers(list1, n);
 
-		String[] list1 = new String[] {"happy","sad","good"};
-		String[] list2 = new String[] {"sad","happy","good"};
-		String[] res = mists.findRestaurant(list1, list2);
-
+		System.out.println("Can place flowers? " + (res ? "YES." : "NO."));
 
 		return;
 	}
