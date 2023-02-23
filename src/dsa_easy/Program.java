@@ -1,15 +1,13 @@
 package dsa_easy;
 
-import array.CanPlaceFlowersSolution;
+import array.MultiplyStrings;
 
 public class Program {
 	public static void main(String[] args) {
-		CanPlaceFlowersSolution cpfs = new CanPlaceFlowersSolution();
-		int n = 2;
-		int[] list1 = new int[] {1, 0, 0, 0, 1, 0, 0};
-		boolean res = cpfs.canPlaceFlowers(list1, n);
+		MultiplyStrings ms = new MultiplyStrings();
+		String res = ms.multiply("223", "126");
 
-		System.out.println("Can place flowers? " + (res ? "YES." : "NO."));
+		System.out.println("result: " + res);
 
 		return;
 	}
