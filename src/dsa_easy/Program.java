@@ -1,13 +1,13 @@
 package dsa_easy;
 
-import array.MultiplyStrings;
+import array.LengthOfLastWordSolution;
 
 public class Program {
 	public static void main(String[] args) {
-		MultiplyStrings ms = new MultiplyStrings();
-		String res = ms.multiply("223", "126");
+		LengthOfLastWordSolution lolws = new LengthOfLastWordSolution();
+		int test = lolws.lengthOfLastWord("luffy is still joyboy");
 
-		System.out.println("result: " + res);
+		System.out.println("result: " + test);
 
 		return;
 	}
