@@ -1,13 +1,13 @@
 package dsa_easy;
 
-import array.WordPatternSolution;
+import array.MaxNumberOfBalloonsSolution;
 
 public class Program {
 	public static void main(String[] args) {
-		WordPatternSolution wps = new WordPatternSolution();
-		boolean test = wps.wordPattern("abba", "dog dog dog dog");
+		MaxNumberOfBalloonsSolution mnbs = new MaxNumberOfBalloonsSolution();
+		int test = mnbs.maxNumberOfBalloons("leetcode");
 
-		System.out.println("match up?: " + (test ? "YES!" : "NO!"));
+		System.out.println("max instances: " + test);
 		// a=>dog
 		// b=>cat
 		// b=>cat
