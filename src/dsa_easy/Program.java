@@ -1,17 +1,15 @@
 package dsa_easy;
 
-import array.MaxNumberOfBalloonsSolution;
+import array.LongestCommonPrefixSolution;
 
 public class Program {
 	public static void main(String[] args) {
-		MaxNumberOfBalloonsSolution mnbs = new MaxNumberOfBalloonsSolution();
-		int test = mnbs.maxNumberOfBalloons("leetcode");
+		LongestCommonPrefixSolution lcps = new LongestCommonPrefixSolution();
+		String[] strs = new String[] {"dog","racecar","car"};
+		String prefix = lcps.longestCommonPrefix(strs);
 
-		System.out.println("max instances: " + test);
-		// a=>dog
-		// b=>cat
-		// b=>cat
-		// 
+		System.out.println("prefix: " + prefix);
+
 		return;
 	}
 }
