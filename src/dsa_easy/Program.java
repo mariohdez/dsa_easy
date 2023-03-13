@@ -1,14 +1,14 @@
 package dsa_easy;
 
-import array.LongestCommonPrefixSolution;
+import array.NumberOfUniqueEmailsSolution;
 
 public class Program {
 	public static void main(String[] args) {
-		LongestCommonPrefixSolution lcps = new LongestCommonPrefixSolution();
-		String[] strs = new String[] {"dog","racecar","car"};
-		String prefix = lcps.longestCommonPrefix(strs);
+		NumberOfUniqueEmailsSolution noues = new NumberOfUniqueEmailsSolution();
+		String[] emails = new String[] {"test.email+alex@leetcode.com","test.email.leet+alex@code.com"};
+		int cnt = noues.numUniqueEmails(emails);
 
-		System.out.println("prefix: " + prefix);
+		System.out.println("count: " + cnt);
 
 		return;
 	}
